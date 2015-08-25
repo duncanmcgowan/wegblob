@@ -1,0 +1,63 @@
+{% extends "wegblob-template.html" %}
+
+{% block main %}
+<div class='row'>
+      
+   {# main entry in content container #}
+   
+   <div class='col-xs-8 col-sm-8 col-md-8 col-lg-8' data-option='last'>
+      <div>
+      {% include entry.template %}
+      </div>
+   </div>
+   <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 wegblob-nav-container'>
+         
+   {# nav panels #}
+   
+   {% for nav in nav_panels %}
+         
+      {% if nav.title == 'Last Posts' and nav.display == True %}
+      <div class='wegblob-nav-panel'>
+         <h4>{{recent_related_title}}</h4>
+         <ul class='wegblob-last-posts-list'>
+         {% for itm in last_entries %}
+            <li>
+               <a href="?entry_id={{itm.id}}">{{itm.title}}</a><br>
+               <span>{{itm.date}}</span>
+            </li>
+         {% endfor %}
+         </ul>
+      </div>
+      {% endif %}
+            
+      {% if nav.title == 'Tag Cloud' and nav.display == True %}
+      <div class='wegblob-nav-panel'>
+         <h4>CATEGORIES</h4>
+         <ul class='wegblob-categories-list'>
+         {% for tag in tags %}
+            <li><a href='/category/?tag={{tag.name}}'>{{ tag.name }}</a></li>
+         {% endfor %}
+         </ul>
+      </div>
+      {% endif %}
+      
+      {% if nav.title == 'About' and nav.display == True %}
+      <div class='wegblob-nav-panel'>
+         <h4>ABOUT</h4>
+         <div class='loadable' data-url='{{nav.url}}'></div>
+      </div>
+      {% endif %}
+      
+      {% if nav.title == 'More' and nav.display == True %}
+      <div class='wegblob-nav-panel'>
+         <h4>MORE</h4>
+         <div class='loadable' data-url='{{nav.url}}'></div>
+      </div>
+      {% endif %}
+            
+   {% endfor %}
+         
+   </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends "wegblob-template.html" %}
+
+{% block main %}
+
+<div class='table-responsive'>
+   <table class='table'>
+      <caption></caption>
+      <thead>
+         <tr>
+            <th>Post date</th>
+            <th>Subject</th>
+            <th>Categories</th>
+         </tr>
+      </thead>
+   {% for entry in archive %}
+      <tr>
+         <td style='vertical-align:middle;'>{{entry.date}}</td>
+         <td style='vertical-align:middle;'><a href='/?entry_id={{entry.id}}'>{{entry.title}}</a></td>
+         <td>
+            <ul class='wegblob-categories-list'>
+            {% for tag in entry.tags %}
+               <li style='margin-bottom:0px;'><a style='margin-top:0px;' href='/category/?tag={{tag.name|urlencode}}'>{{ tag.name }}</a></li>
+            {% endfor %}
+            </ul>
+         </td>
+      </tr>
+   {% endfor %}
+   </table>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>{{ main_page_title }}</title>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/wegblob.js' %}"></script>
+
+<script src="{% static 'prettify/prettify.js' %}"></script>
+<link href="{% static 'prettify/prettify.css' %}" rel="stylesheet">
+
+<link href="{% static 'bootstrap-3.3.4/css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'bootstrap-3.3.4/css/bootstrap-theme.css' %}" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href="{% static 'css/wegblob.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap-override.css' %}" rel="stylesheet">
+
+<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+
+{% block head %}
+{% endblock %}
+
+</head>
+
+<body>
+
+      <div class='page-header'>
+         <div class='container'>
+            <a href="/"><h1 class='wegblob-header'>{{page_header_text}}</h1></a>
+            <p>{{page_header_subtext}}</p>
+         </div>
+      </div>
+      
+   <div id='wegblob-container' class='container'>
+   {% block main %}
+   {% endblock %}
+   </div>
+   
+{% autoescape off %}
+   <footer class="footer">
+      <div class="container">
+         
+      </div>
+
+      <div class='wegblob-footer-inner'>
+         <div class='container'>{{footer_inner_text}}</div>
+      </div>
+   </footer>
+{% endautoescape %}
+
+<script src="{% static 'bootstrap-3.3.4/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/*
+   Bootstrap theme override
+   
+   Clone and adapt this to make your own theme.
+   
+   DM May 2015
+*/
+
+.container {
+	max-width: 980px;
+}
+
+.page-header {
+   background-color:transparent;
+	margin:0;
+	font-family: 'Special Elite', cursive;
+}

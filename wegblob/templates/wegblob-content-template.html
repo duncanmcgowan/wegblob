@@ -1,0 +1,13 @@
+
+<h4>{{entry.title}}</h4>
+{% autoescape off %}
+<div class='wegblob-content'>
+   <span class='wegblob-posted-span'>{{entry.date}}</span>
+   {% block main %}
+   {% endblock %}
+</div>
+{% endautoescape %}
+
+<div class='row text-center'>
+   <img class='img img-responsive center-block' src=""/>
+</div><br>

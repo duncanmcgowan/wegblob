@@ -1,0 +1,11 @@
+{% extends "wegblob-template.html" %}
+
+{% block main %}
+<h5>Categories: click a category to list the related posts</h5>
+<ul class='wegblob-categories-list'>
+   {% for tag in tags %}
+      <li><a href='/category/?tag={{tag.name|urlencode}}'>{{ tag.name }}</a></li>
+   {% endfor %}
+</ul>
+
+{% endblock %}

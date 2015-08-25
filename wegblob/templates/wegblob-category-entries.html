@@ -1,0 +1,38 @@
+{% extends "wegblob-template.html" %}
+
+{% block main %}
+
+{% if entries|length == 0 %}
+   <h5>No entries found with category &quot;{{tag}}&quot;</h5>
+{% else %}
+   <h5>Entries for category &quot;{{tag}}&quot;</h5>
+   
+   <div class='table-responsive'>
+      <table class='table'>
+         <caption></caption>
+         <thead>
+            <tr>
+               <th>Post date</th>
+               <th>Subject</th>
+               <th>Categories</th>
+            </tr>
+         </thead>
+         {% for entry in entries %}
+         <tr>
+            <td style='vertical-align:middle;'>{{entry.date}}</td>
+            <td style='vertical-align:middle;'><a href='/?entry_id={{entry.id}}'>{{entry.title}}</a></td>
+            <td>
+               <ul class='wegblob-categories-list'>
+               {% for tag in entry.tags %}
+                  <li style='margin-bottom:0px;'><a style='margin-top:0px;' href='/category/?tag={{tag.name|urlencode}}'>{{ tag.name }}</a></li>
+               {% endfor %}
+               </ul>
+            </td>
+         </tr>
+      {% endfor %}
+      </table>
+   </div>
+  
+{% endif %}
+
+{% endblock %}

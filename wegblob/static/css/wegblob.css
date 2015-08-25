@@ -1,0 +1,203 @@
+/*
+   wegblob-specific styles
+   
+   DM May 2015
+*/
+
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding:0;
+	line-height:1.4em;
+	border-top:10px solid rgb(70,137,188);
+	margin-bottom:90px;
+	}
+	
+#wegblob-content-container {
+}
+
+.wegblob-code-btn {
+}
+
+.wegblob-collapse-group {
+	padding:5px;
+	margin-bottom:15px;
+	border: 1px solid rgb(220,220,220);
+}
+
+.wegblob-content-pre {
+   font-size: 0.9em;
+   margin-top:20px;
+   margin-bottom:20px;
+   background-color: rgb(255,255,255);
+   border: 1px solid rgb(230,230,230);
+}
+
+.wegblob-collapse-pre {
+	margin-top:5px;
+	margin-bottom:5px;
+	border: 0px dotted rgb(41,170,210);
+	border-top: 1px solid rgb(230,230,230);
+	border-radius:0;
+}
+
+#wegblob-content-container h4 {
+	border-bottom: 1px dotted rgb(200,200,200);
+	padding-bottom:20px;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+
+.wegblob-content {
+	font-size: 0.9em;
+	color: rgb(110,110,110);
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom: 1px dotted rgb(220,220,220);
+}
+
+.wegblob-content > h4 {
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+	text-decoration: none;
+	color: rgb(70,137,188);
+	font-weight: bold;
+	font-size:1.4em;
+}
+
+.wegblob-content > h5 {
+   margin-top:2em;
+   margin-bottom:1.5em;
+   text-decoration: none;
+   color: rgb(70,137,188);
+   font-weight: bold;
+}
+
+.wegblob-posted-span {
+	margin-bottom:20px;
+	display: block;
+	font-size: 0.9em;
+   color: rgb(70,137,188);
+}
+
+.wegblob-content > p {
+	line-height:1.8em;
+	color: #393939;
+}
+
+.wegblob-note {
+	background-color: #f6feb0;
+	width:100%;
+	border: 1px solid #fee913;
+	border-radius: 5px 5px 5px 5px;
+	padding: 5px;
+	margin-bottom:10px;
+	color: rgb(30,30,30);
+}
+
+.wegblob-note h5 {
+	font-weight: bold;
+	color: rgb(30,30,30);
+	margin: 2px;
+	margin-left:0px;
+}
+
+.wegblob-nav-container {
+	
+}
+
+.wegblob-header {
+	color: rgb(50,50,50);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: rgb(76,76,76);
+}
+
+.wegblob-footer-inner {
+	background-color:rgb(28,28,28); 
+	height:30px; 
+	position:absolute; 
+	bottom:0px; 
+	left:0px; 
+	width:100%; 
+	color:rgb(220,220,220);
+}
+
+.wegblob-footer-inner .container {
+	line-height: 30px;
+	font-size: 0.8em;
+	color: rgb(200,200,200);
+}
+
+.wegblob-nav-panel {
+	font-size: 0.90em;
+	margin-bottom: 20px;
+}
+
+.wegblob-nav-panel > h4 {
+	border-bottom: 1px dotted rgb(200,200,200);
+	margin-top: 15px;
+	padding: 0px 0px 6px;
+	color: rgb(110,110,110);
+	font-size: 1.0em;
+}
+
+.wegblob-categories-list {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	list-style: outside none none;
+	clear: both;
+}
+
+.wegblob-categories-list a {
+	margin-right: 6px;
+   margin-top: 6px;
+   padding: 0px 10px 0px 12px;
+   background: rgb(70,137,188) none repeat scroll 0% 0%;
+   color: rgb(240,240,240);
+   text-decoration: none;
+   border-radius: 4px;
+}
+
+.wegblob-categories-list li, .wegblob-categories-list a {
+	display: inline-block;
+   font-size: 11px;
+   height: 24px;
+   line-height: 24px;
+   position: relative;
+   margin-bottom: 8px;
+}
+
+.wegblob-nav-panel p {
+	font-size: 0.9em;
+	color:rgb(100,100,100);
+}
+
+.wegblob-last-posts-list {
+	margin:0px;
+	padding:0px;
+	list-style: outside none none;
+}
+
+.wegblob-last-posts-list > li {
+	padding: 4px 0px;
+   line-height: 20px;
+   font-size: 0.9em;
+   color:rgb(100,100,100);
+}
+
+.wegblob-last-posts-list > li a {
+	font-size: 1.2em;
+}
