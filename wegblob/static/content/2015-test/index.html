@@ -1,6 +1,14 @@
 {% extends "wegblob-content-template.html" %}
 {% block main %}
 
+{# notation for including an image #}
+<img src='{{entry.base_path}}{{entry.rel_path}}/any-image.png' class='img img-responsive pull-left'/>
+
+{# notation for including a stylesheet #}
+<link href="{{entry.base_path}}{{entry.rel_path}}/any-stylesheet.css" rel="stylesheet">
+
+{# Add your content here #}
+
 <p>
 A blog entry
 </p>

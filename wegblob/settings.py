@@ -52,8 +52,6 @@ MIDDLEWARE_CLASSES = (
     'wegblob.wegblob_middleware.WegBlobMiddleware',
 )
 
-#SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
-
 ROOT_URLCONF = 'wegblob.urls'
 
 TEMPLATES = [

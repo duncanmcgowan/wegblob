@@ -12,19 +12,19 @@ $(document).ready(function(){
 
 function init()
 {	
-	//	Process 'loadables' (for nav panels) >>>
-	$(".loadable").each( function(idx) {
-		var url = $(this).data("url");
-		$(this).load("/static/content/"+url);
-	});
+   //	Process 'loadables' (for nav panels) >>>
+   $(".loadable").each( function(idx) {
+      var url = $(this).data("url");
+      $(this).load("/static/content/"+url);
+   });
 	
-	//   Where an 'eg-content-pre' contains a 'data-tag-id', this block loads the <pre> content
-	//   from the remote source specified via the 'data-tag-id' attribute, which points to the
-	//   id of a script tag. This avoids pasting code into a <pre> - the actual code is loaded
-	//   instead >>>
+   //   Where an 'wegblob-content-pre' contains a 'data-tag-id', this block loads the <pre> content
+   //   from the remote source specified via the 'data-tag-id' attribute, which points to the
+   //   id of a script tag. This avoids pasting code into a <pre> - the actual code is loaded
+   //   instead >>>
 	
-	$(".wegblob-content-pre").each(function(idx)
-	{
+   $(".wegblob-content-pre").each(function(idx)
+   {
       var tag = $(this).data("tag-id");
       if ( tag )
       {
@@ -49,52 +49,37 @@ function init()
       }
    });
 	
-	//   If you add a 'content_ready()' function in your index.html then this will be
-	//   executed below, ensuring that content is fully-loaded before doing some DOM or
-	//   AJAX stuff >>>
+   //   If you add a 'content_ready()' function in your index.html then this will be
+   //   executed below, ensuring that content is fully-loaded before doing some DOM or
+   //   AJAX stuff >>>
 	
-	if ( typeof content_ready !== "undefined" )
-	   content_ready();
+   if ( typeof content_ready !== "undefined" )
+      content_ready();
 	
-	prettyPrint();
+   prettyPrint();
 	
-	//   Code to handle show/hide <pre> contents >>>
+   //   Code to handle show/hide <pre> contents >>>
 	
-	$('.wegblob-code-btn').on('click', function(e)
-	{
-	   e.preventDefault();
-	   var $this = $(this);
-	   var state = $this.attr('data-state');
+   $('.wegblob-code-btn').on('click', function(e)
+   {
+      e.preventDefault();
+      var $this = $(this);
+      var state = $this.attr('data-state');
 	 
-	   if ( state === 'off' )
-	   {
-	      var html = (typeof $(this).data('hide-text') !== "undefined") ? $(this).data('hide-text') : "Hide code &laquo;";
-	      $this.html(html);
-	      $(this).attr("data-state","on");
-	   }
-	   else
-	   {
-	      var html = (typeof $(this).data('show-text') !== "undefined") ? $(this).data('show-text') : "Show code &raquo;";
-	      $this.html(html);
-	      $(this).attr("data-state","off");
-	   }
-	   var $collapse = $this.closest('.collapse-group').find('.collapse');
-	   $collapse.collapse('toggle');
-	});
+      if ( state === 'off' )
+      {
+         var html = (typeof $(this).data('hide-text') !== "undefined") ? $(this).data('hide-text') : "Hide code &laquo;";
+         $this.html(html);
+         $(this).attr("data-state","on");
+      }
+      else
+      {
+         var html = (typeof $(this).data('show-text') !== "undefined") ? $(this).data('show-text') : "Show code &raquo;";
+         $this.html(html);
+         $(this).attr("data-state","off");
+      }
+      var $collapse = $this.closest('.collapse-group').find('.collapse');
+      $collapse.collapse('toggle');
+   });
 	
 }
-
-function eg_decode_url ()
-{
-	//	Convert current url's query string to a json object >>>
-    var obj = {};
-    var qa = (location.search.indexOf("?") !== -1) ? location.search.split("?")[1].split("&") : location.search.split("&");
-    
-    for ( var i=0; i<qa.length; i++ )
-    {
-        var p = qa[i].split("=");
-        obj[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
-    }
-    return obj;
-}
-

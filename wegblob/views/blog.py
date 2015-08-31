@@ -15,9 +15,7 @@ def blog_main(request):
    - sets up nav and other options based on the config data
    - returns the templated page
    """
-   
-   context = wegblob_settings.config
-   
+   context = wegblob_settings.config 
    entry_id = request.GET.get("entry_id")
    if entry_id is not None:
       entry_id = int(entry_id)
@@ -72,19 +70,12 @@ def archive(request):
    """
    Returns a full archive (list) of all entries, most recent at top
    """
-   
-   #cookie_test = request.GET.get("cookie",None)
-   #if cookie_test is not None:
-   #   return
-   
    context = wegblob_settings.config
    context['archive'] = db.fetch_all()
    for i, entry in enumerate(context['archive']):
       context['archive'][i]['tags'] = _format_post_tags(entry['tags'])
       
-   response = render_to_response('wegblob-archive.html', context, context_instance=RequestContext(request))
-   #response.set_cookie('username', 'admin')
-   
+   response = render_to_response('wegblob-archive.html', context, context_instance=RequestContext(request))   
    return response
 
 
