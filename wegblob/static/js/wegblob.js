@@ -1,5 +1,5 @@
 /*
- * eg.js
+ * wegblob.js
  * 
  * Supporting JS for wegblob blog package
  * 
