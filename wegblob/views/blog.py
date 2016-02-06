@@ -103,9 +103,6 @@ def _format_post_tags(tags):
    Private function to convert post tags (eg, "JavaScript | Bootstrap | CSS") into
    a dict
    """
-   #lst = str(tags).split("|")
-   #lst = [str(itm).strip() for itm in lst]
-   
    lst = map(str.strip, str(tags).split("|"))
    lst.sort()
 
